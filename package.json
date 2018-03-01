@@ -24,7 +24,7 @@
     "url": "git+https://github.com/ygSW7/cppnodejsnan.git"
   },
   "keywords": [
-    "c++"
+    "c++",
     "node",
     "heroku",
     "express"
