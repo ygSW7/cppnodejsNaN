@@ -1,19 +1,4 @@
-const express = require('express'); //var
-//var app = express();
-const path = require('path')
-const PORT = process.env.PORT || 5000
-
-express()
-  //.use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  //.set('view engine', 'ejs')
-  //.get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-
-
-//app.use(express.logger());
-
+var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
@@ -29,16 +14,16 @@ var types = [
     description: "Execute a really primitive implementation of prime sieve in Node.js"
   },
   {
-  title: "standalone_args",
-    description: "Execute C++ executable as a child process, using command line args and stdout.  Based on         /cpp/standalone_stdio"
+    title: "standalone_args",
+    description: "Execute C++ executable as a child process, using command line args and stdout.  Based on /cpp/standalone_stdio"
   },
   {
-  title: "standalone_usr",
+    title: "standalone_usr",
     description: "Execute C++ executable as a child process, using direct user input.  Based on /cpp/standalone_usr"
   },
   {
     title: "standalone_file",
-    description: "Execute C++ executable as a child process, using an input and output file.  Based on    /cpp/standalone_flex_file"
+    description: "Execute C++ executable as a child process, using an input and output file.  Based on /cpp/standalone_flex_file"
   },
   {
     title: "ffi",
@@ -56,13 +41,13 @@ var types = [
 
 
 types.forEach(function (type) {
-    app.use('/'+type.title, require('./routes/' + type.title));
+    app.use('/'+type.title, require('./web/routes/' + type.title));
 });
 
 app.get('/', function (req, res) {
-  res.render('index', { routes: types});
+  res.render('./web/index', { routes: types});
 });
 
-//var server = app.listen(3000, function () {
+var server = app.listen(3000, function () {
   console.log('Web server listing at http://localhost:%s', server.address().port);
-//});
+});

@@ -12,8 +12,9 @@
     "npm": "5.6.0"
   },
   "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "grunt": "^0.4.5",
+    "grunt-auto-install": "^0.3.0",
+    "grunt-contrib-clean": "^0.7.0"
   },
   "repository": {
     "type": "git",
@@ -35,12 +36,5 @@
     "ref-array": "*",
     "temp": "*",
     "rmdir": "*"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-auto-install": "^0.3.0",
-    "grunt-contrib-clean": "^0.7.0"
   }
 }
-
-
